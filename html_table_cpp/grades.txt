@@ -1,0 +1,6 @@
+Name,Assignment1,Assignment2,Quiz1,Assignment3
+Pete,10,5,8,9
+Sam,8,10,4,10
+Sally,9,9,10,8
+June,8,7,12,10
+Max Points,10,10,12,10
