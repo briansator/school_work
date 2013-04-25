@@ -87,14 +87,16 @@ public void addFirst(E obj){
  * @param obj the object to add
  */
 public void addLast(E obj){
+        Node<E> newNode = new Node<E>(obj);
 	if(head == null){
-		head = (Node<E>) obj;
+		head = newNode;
 	}
 	Node<E> tmp = head;
 	while(tmp != null){
 		tmp = tmp.next;
 	}
-	tmp.next = (Node<E>) obj;
+        newNode.next = null;
+	tmp.next = newNode;
 }
 /**
  * Removes the first Object in the list and returns it.
