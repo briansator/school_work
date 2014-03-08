@@ -14,6 +14,7 @@ public:
 	listNode<Integer> find( ListNode<Integer> head, int data);
 
 protected:
+	//this is our Node class, with appropriate method declarations
 	 class listNode{
 	 	public:
 	 		listNode( const T &val) : next (NULL), data (val){};
@@ -32,7 +33,7 @@ protected:
 	 listNode *head;
 	 listNode *tail;
 };
-
+//insert a node to the front of the linkedlist
  bool LinkedList :: insertFront ( listNode **head, int data){
  	listNode *newNode = new listNode();
  	if(!newNode) return false;
@@ -42,7 +43,7 @@ protected:
  	*head = newNode;
  	return true;
  }
-
+//inster a node to the back of the linkedlist
  bool LinkedList :: insertLast ( listNode **tail, int data){
  	listNode *newNode = new listNode();
  	if(!newNode) return false;
@@ -52,7 +53,7 @@ protected:
  	*tail = newNode;
  	return true;
  }
-
+//delete a given node from the linked list
  bool LinkedList :: deleteNode (listNode **head, listNode *toDelete){
  	listNode *elem;
 
@@ -77,7 +78,7 @@ protected:
  	}
  	return false; //toDelete was not found
  }
-
+//delete the whole list
  void LinkedList :: deleteList (listNode **head){//method to delete the entire list
  	listNode *toDelete = *head;
 
@@ -88,7 +89,7 @@ protected:
  	}
  	*head = NULL;
  }
-
+//delete the head of the linkedlist and update the new head
  bool LinkedList :: deleteHead(listNode **head){
  	if(!head || !*head){//check to make sure it is not an empty list
  		return false;
@@ -99,7 +100,7 @@ protected:
  	*head = elem;
  	return true;
  }
-
+//delete the tail of the linked list and update the new tail
  bool LinkedList :: deleteTail(listNode **head, listNode **tail){
  	if(*head.next() == NULL){
  		delete(head);
@@ -116,6 +117,7 @@ protected:
  	delete(tail);
  	*tail = elem;
  }
+//find a the element in the linkedlist node with the given data
 listNode<Integer> LinkedList :: find( ListNode<Integer> head, int data){//caller must check for null return value
  	ListNode<Integer> elem = head;
  	while(elem != null && elem.value() != data){
